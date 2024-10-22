@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -13,6 +14,10 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
+Route::get('/posts/new', [PostsController::class, 'new'])->name('posts.new');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
