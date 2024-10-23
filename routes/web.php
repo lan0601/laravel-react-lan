@@ -18,6 +18,13 @@ Route::get('/', function () {
 Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
 Route::get('/posts/new', [PostsController::class, 'new'])->name('posts.new');
 
+Route::get('/products',function(){
+    return Inertia::render('AllProductComponent'); 
+});
+
+Route::get('/students',function(){
+    return Inertia::render('AllStudentComponent'); 
+});
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
