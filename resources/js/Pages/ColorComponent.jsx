@@ -1,12 +1,33 @@
 import React,{useState} from "react";
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import { Head } from '@inertiajs/react';
 
 export default function ColorComponent(){
     const [color,setColor] = useState("red");
 
     return(
         <>
-            <h1>Fav Color is {color}</h1>
-            <button type="button" onClick={()=>setColor("blue")}> Color Change</button>
+        <AuthenticatedLayout
+            header={
+                <h2 className="text-xl font-semibold leading-tight text-gray-800">
+                    Colors
+                </h2>
+            }
+            >
+            <Head title="New Component" />
+            <div className="py-12">
+                <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
+                        <div className="p-6 text-gray-900">
+                            <h1>Fav Color is {color}</h1>
+                            <button type="button" onClick={()=>setColor("blue")}> Color Change</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </AuthenticatedLayout>
+
+            
         </>
     )
 }

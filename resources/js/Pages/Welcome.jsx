@@ -14,7 +14,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
     return (
         <>
-            <Head title="Welcome" />
+            <Head title="Welcome"/>
             <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
                 <img
                     id="background"
@@ -64,7 +64,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                             </nav>
                         </header>
 
-                        <main className="mt-6">
+                        {/* <main className="mt-6">
                             <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
                                 <a
                                     href="https://laravel.com/docs"
@@ -348,7 +348,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     </div>
                                 </div>
                             </div>
-                        </main>
+                        </main> */}
 
                         <footer className="py-16 text-center text-sm text-black dark:text-white/70">
                             Laravel v{laravelVersion} (PHP v{phpVersion})

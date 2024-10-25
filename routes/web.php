@@ -15,8 +15,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
-Route::get('/posts/new', [PostsController::class, 'new'])->name('posts.new');
+Route::get('/posts', [PostsController::class, 'index'])->middleware(['auth', 'verified'])->name('posts.index');
+Route::get('/posts/new', [PostsController::class, 'new'])->middleware(['auth', 'verified'])->name('posts.new');
 
 Route::get('/products',function(){
     return Inertia::render('AllProductComponent'); 
@@ -24,15 +24,15 @@ Route::get('/products',function(){
 
 Route::get('/students',function(){
     return Inertia::render('AllStudentComponent'); 
-});
+})->middleware(['auth', 'verified'])->name('students');
 
 Route::get('/appliance',function(){
     return Inertia::render('ApplianceComponent'); 
-});
+})->middleware(['auth', 'verified'])->name('appliance');
 
 Route::get('/color',function(){
     return Inertia::render('ColorComponent'); 
-});
+})->middleware(['auth', 'verified'])->name('color');;
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

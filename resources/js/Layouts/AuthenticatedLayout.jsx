@@ -30,6 +30,36 @@ export default function AuthenticatedLayout({ header, children }) {
                                 >
                                     Dashboard
                                 </NavLink>
+                                <NavLink
+                                    href={route('appliance')}
+                                    active={route().current('appliance')}
+                                >
+                                    Appliance
+                                </NavLink>
+                                <NavLink
+                                    href={route('students')}
+                                    active={route().current('students')}
+                                >
+                                    Students
+                                </NavLink>
+                                <NavLink
+                                    href={route('color')}
+                                    active={route().current('color')}
+                                >
+                                    Colors
+                                </NavLink>
+                                <NavLink
+                                    href={route('posts.index')}
+                                    active={route().current('posts.index')}
+                                >
+                                    Posts
+                                </NavLink>
+                                <NavLink
+                                    href={route('posts.new')}
+                                    active={route().current('posts.new')}
+                                >
+                                    New Posts
+                                </NavLink>
                             </div>
                         </div>
 
